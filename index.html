@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Argila Branca Adlux - Loja</title>
+    <meta name="description" content="Descubra o Kit Argila Branca Adlux, o tratamento completo para hidratação profunda, controle de oleosidade e reparação dos cabelos. Compre agora com desconto especial!">
+    <meta name="keywords" content="argila branca, adlux, tratamento capilar, hidratação cabelo, cabelo saudável, cuidados com cabelo">
+    <meta name="author" content="Argila Branca Adlux">
+    <title>Argila Branca Adlux - Transforme Seus Cabelos</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Estilos adicionais para o botão do WhatsApp */
+        /* Estilos adicionais */
         .whatsapp-button {
             position: fixed;
             bottom: 20px;
@@ -17,6 +20,7 @@
             border-radius: 50%;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease;
+            z-index: 1000;
         }
         .whatsapp-button:hover {
             transform: scale(1.1);
@@ -25,61 +29,242 @@
             width: 28px;
             height: 28px;
         }
+        .sticky-cta {
+            position: sticky;
+            top: 20px;
+            z-index: 50;
+        }
+        #countdown {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #e53e3e;
+        }
+        .benefit-icon {
+            width: 24px;
+            height: 24px;
+            margin-right: 8px;
+        }
+        .video-home-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            z-index: -1;
+        }
+        .video-home-iframe {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay for readability */
+            padding: 2rem;
+            border-radius: 1rem;
+        }
     </style>
 </head>
 <body class="bg-gray-100 font-sans">
 
+    <!-- Parallax Video Background -->
+    <div class="video-home-wrapper" id="videoParallax">
+        <iframe
+            class="video-home-iframe"
+            src="https://www.youtube.com/embed/dtQ9EdgUWsY?autoplay=1&mute=1&controls=0&loop=1&playlist=dtQ9EdgUWsY&playsinline=1&modestbranding=1&showinfo=0&rel=0"
+            frameborder="0"
+            allow="autoplay; encrypted-media"
+            allowfullscreen
+            title="Vídeo de Fundo"
+        ></iframe>
+    </div>
+
+    <!-- Header -->
     <header class="bg-white shadow p-4 md:px-6">
         <div class="container mx-auto flex justify-between items-center">
             <h1 class="text-2xl font-bold text-gray-800">Argila Branca Adlux</h1>
             <nav class="hidden md:flex space-x-4 text-gray-600">
-                <a href="#" class="hover:text-gray-900">Início</a>
-                <a href="#" class="hover:text-gray-900">Produtos</a>
+                <a href="#home" class="hover:text-gray-900">Início</a>
+                <a href="#benefits" class="hover:text-gray-900">Benefícios</a>
+                <a href="#testimonials" class="hover:text-gray-900">Depoimentos</a>
+                <a href="#faq" class="hover:text-gray-900">FAQ</a>
             </nav>
         </div>
     </header>
 
-    <main class="container mx-auto p-4 md:p-8">
-        <div class="bg-white rounded-lg shadow-lg overflow-hidden md:flex">
-            <div class="md:w-1/2 flex items-center justify-center p-4">
-                <img src="https://adlux.com.br/wp-content/uploads/2022/10/kit-argila-branca-manutencao.jpg" alt="Kit Argila Branca Adlux" class="w-full h-auto object-cover rounded-lg">
-            </div>
-
-            <div class="md:w-1/2 p-6 md:p-8">
-                <span class="bg-green-100 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded-full mb-2">PROMOÇÃO</span>
-                <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mt-2">Kit Argila Branca Adlux</h2>
-                <p class="text-lg text-gray-600 mt-2">Mantenha a saúde dos seus fios com este tratamento completo.</p>
-
-                <div class="mt-4 flex items-baseline space-x-2">
-                    <span class="text-xl md:text-2xl font-bold text-gray-900">R$ 139,90</span>
+    <!-- Hero Section -->
+    <section id="home" class="py-12 md:py-20 text-white">
+        <div class="container mx-auto px-4 md:flex items-center">
+            <div class="md:w-1/2 text-center md:text-left hero-content">
+                <span class="bg-yellow-300 text-gray-800 text-xs font-semibold px-2.5 py-0.5 rounded-full mb-4 inline-block">PROMOÇÃO ESPECIAL</span>
+                <h2 class="text-2xl md:text-3xl font-extrabold mb-4">Kit Argila Branca Adlux</h2>
+                <p class="text-3xl md:text-4xl font-bold text-yellow-300 mb-4">Hidratação, Antioxidante e Antienvelhecimento da Fibra Capilar</p>
+                <p class="text-lg md:text-xl mb-6">Transforme seus cabelos com um tratamento completo e eficaz!</p>
+                <div class="flex items-baseline space-x-4 mb-6">
+                    <span class="text-2xl md:text-3xl font-bold">R$ 139,90</span>
+                    <span class="text-sm text-gray-200 line-through">R$ 199,90</span>
                 </div>
-                
-                <div class="mt-6 text-gray-700 space-y-3">
-                    <h3 class="text-xl font-bold">Principais Benefícios:</h3>
-                    <ul class="list-disc list-inside space-y-2">
-                        <li><span class="font-semibold">Hidratação profunda:</span> Nutre os fios de dentro para fora.</li>
-                        <li><span class="font-semibold">Controle da oleosidade:</span> Equilibra o couro cabeludo.</li>
-                        <li><span class="font-semibold">Reparação dos danos:</span> Ajuda a restaurar a fibra capilar.</li>
-                        <li><span class="font-semibold">Brilho e maciez:</span> Deixa o cabelo com um aspecto saudável.</li>
-                    </ul>
-                </div>
-
-                <a href="URL_DA_PAGINA_DE_COMPRA_AQUI" class="mt-8 inline-block w-full text-center py-3 px-6 bg-green-600 text-white font-bold text-lg rounded-full hover:bg-green-700 transition-colors shadow-lg">
-                    Compre Agora e Transforme seus Cabelos
+                <div id="countdown" class="mb-6">Oferta válida até: <span id="timer"></span></div>
+                <a href="URL_DA_PAGINA_DE_COMPRA_AQUI" class="inline-block py-3 px-8 bg-yellow-400 text-gray-800 font-bold text-lg rounded-full hover:bg-yellow-500 transition-colors shadow-lg">
+                    Compre Agora
                 </a>
             </div>
+            <div class="md:w-1/2 mt-8 md:mt-0 flex justify-center">
+                <img src="img/argila.png" alt="Kit Argila Branca Adlux" class="w-full max-w-md h-auto object-cover rounded-lg shadow-lg">
+            </div>
         </div>
-    </main>
+    </section>
 
-    <a href="https://api.whatsapp.com/send?phone=SEU_NUMERO_AQUI&text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20Kit%20Argila%20Branca%20Adlux." target="_blank" class="whatsapp-button">
+    <!-- Benefits Section -->
+    <section id="benefits" class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-center text-gray-900 mb-8">Por que Escolher Argila Branca Adlux?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="flex items-start">
+                    <svg class="benefit-icon text-green-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <div>
+                        <h3 class="text-lg font-semibold">Hidratação Profunda</h3>
+                        <p class="text-gray-600">Nutre os fios de dentro para fora, garantindo cabelos macios e saudáveis.</p>
+                    </div>
+                </div>
+                <div class="flex items-start">
+                    <svg class="benefit-icon text-green-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <div>
+                        <h3 class="text-lg font-semibold">Controle da Oleosidade</h3>
+                        <p class="text-gray-600">Equilibra o couro cabeludo, reduzindo o excesso de oleosidade.</p>
+                    </div>
+                </div>
+                <div class="flex items-start">
+                    <svg class="benefit-icon text-green-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <div>
+                        <h3 class="text-lg font-semibold">Reparação dos Danos</h3>
+                        <p class="text-gray-600">Restaura a fibra capilar, recuperando cabelos danificados.</p>
+                    </div>
+                </div>
+                <div class="flex items-start">
+                    <svg class="benefit-icon text-green-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <div>
+                        <h3 class="text-lg font-semibold">Brilho e Maciez</h3>
+                        <p class="text-gray-600">Deixa os cabelos com um aspecto brilhante e sedoso.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-12 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-center text-gray-900 mb-8">O que Nossos Clientes Dizem</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <p class="text-gray-600 italic">"Meu cabelo nunca esteve tão macio e brilhante! O kit Adlux mudou minha rotina de cuidados."</p>
+                    <p class="mt-4 font-semibold text-gray-900">Ana S., São Paulo</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <p class="text-gray-600 italic">"A oleosidade do meu couro cabeludo diminuiu muito. Recomendo para todas!"</p>
+                    <p class="mt-4 font-semibold text-gray-900">Mariana C., Rio de Janeiro</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <p class="text-gray-600 italic">"Vale cada centavo! Meu cabelo está mais forte e saudável."</p>
+                    <p class="mt-4 font-semibold text-gray-900">Juliana M., Belo Horizonte</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-center text-gray-900 mb-8">Perguntas Frequentes</h2>
+            <div class="space-y-4">
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <h3 class="text-lg font-semibold">Para quais tipos de cabelo o kit é indicado?</h3>
+                    <p class="text-gray-600">O Kit Argila Branca Adlux é ideal para todos os tipos de cabelo, especialmente os oleosos ou danificados.</p>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <h3 class="text-lg font-semibold">Quanto tempo dura o kit?</h3>
+                    <p class="text-gray-600">Com uso regular, o kit dura cerca de 1 a 2 meses, dependendo da frequência de aplicação.</p>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <h3 class="text-lg font-semibold">O produto é testado em animais?</h3>
+                    <p class="text-gray-600">Não, nossos produtos são 100% cruelty-free e dermatologicamente testados.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof Section -->
+    <section class="py-12 bg-gray-100 text-center">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-8">Confiado por Milhares de Clientes</h2>
+            <p class="text-lg text-gray-600 mb-6">Nosso compromisso com a qualidade é reconhecido por marcas e especialistas em cuidados capilares.</p>
+            <div class="flex justify-center space-x-8">
+                <img src="https://via.placeholder.com/100x50?text=Parceiro+1" alt="Parceiro 1" class="h-12">
+                <img src="https://via.placeholder.com/100x50?text=Parceiro+2" alt="Parceiro 2" class="h-12">
+                <img src="https://via.placeholder.com/100x50?text=Parceiro+3" alt="Parceiro 3" class="h-12">
+            </div>
+        </div>
+    </section>
+
+    <!-- Sticky CTA -->
+    <div class="sticky-cta container mx-auto px-4 py-6 bg-green-600 text-white text-center rounded-lg shadow-lg">
+        <p class="text-lg font-semibold mb-4">Não perca a oferta especial! Transforme seus cabelos hoje.</p>
+        <a href="URL_DA_PAGINA_DE_COMPRA_AQUI" class="inline-block py-3 px-8 bg-yellow-400 text-gray-800 font-bold text-lg rounded-full hover:bg-yellow-500 transition-colors">
+            Comprar Agora
+        </a>
+    </div>
+
+    <!-- WhatsApp Button -->
+    <a href="https://api.whatsapp.com/send?phone=5511951236930&text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20Kit%20Argila%20Branca%20Adlux." target="_blank" class="whatsapp-button">
         <svg class="whatsapp-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
             <path fill="currentColor" d="M380.9 97.1C339.4 59.4 286.7 39.4 231.2 39.4 116.7 39.4 21.6 134.5 21.6 249.2c0 40.5 11.2 79.5 32.5 113.8l-15.5 56.6 58-15.2c32.7 17.8 70.8 27.2 110.1 27.2 114.7 0 209.8-95.1 209.8-209.8 0-55.5-20-108.2-57.7-149.7zM348.6 348.8c-1.9 4.7-5.9 5.8-9.8 5.8-2.6 0-5.3-.8-7.9-2.2l-61.1-29.8c-3.6-1.7-7.7-2.6-11.8-2.6-4.1 0-8.2.9-11.8 2.6l-61.1 29.8c-2.6 1.4-5.3 2.2-7.9 2.2-4 0-8-.8-11.8-2.2-3.8-1.7-6.2-4.1-7.8-7.8-1.5-3.8-2.2-7.8-2.2-11.8 0-4 .7-8.1 2.2-11.8 1.5-3.8 3.9-6.2 7.8-7.8l29.8-14.5c3.6-1.7 5.8-5.3 5.8-9.4v-40.4c0-3.6-2.2-7.2-5.8-9.4l-29.8-14.5c-3.8-1.5-6.2-3.9-7.8-7.8-1.5-3.8-2.2-7.8-2.2-11.8 0-4 .7-8.1 2.2-11.8 1.5-3.8 3.9-6.2 7.8-7.8l61.1-29.8c3.6-1.7 7.7-2.6 11.8-2.6 4.1 0 8.2.9 11.8 2.6l61.1 29.8c2.6 1.4 5.3 2.2 7.9 2.2 4 0 8 .8 11.8 2.2 3.8 1.5 6.2 3.9 7.8 7.8 1.5 3.8 2.2 7.8 2.2 11.8 0 4-.7 8.1-2.2 11.8-1.5 3.8-3.9 6.2-7.8 7.8l-29.8 14.5c-3.6 1.7-5.8 5.3-5.8 9.4v40.4c0 3.6 2.2 7.2 5.8 9.4l29.8 14.5c3.8 1.5 6.2 3.9 7.8 7.8 1.5 3.8 2.2 7.8 2.2 11.8 0 4-.7 8.1-2.2 11.8-1.5 3.8-3.9 6.2-7.8 7.8z"/>
         </svg>
     </a>
 
+    <!-- Footer -->
     <footer class="bg-white text-gray-500 text-center py-4 mt-8">
-        <p>&copy; 2025 Argila Branca Adlux. Todos os direitos reservados.</p>
+        <p>&copy; 2025 Argila Branca Adlux SP. Todos os direitos reservados.</p>
+        <p class="mt-2"><a href="#" class="hover:text-gray-900">Política de Privacidade</a> | <a href="#" class="hover:text-gray-900">Termos de Uso</a></p>
     </footer>
+
+    <!-- Countdown Timer Script -->
+    <script>
+        function startTimer(duration, display) {
+            let timer = duration, hours, minutes, seconds;
+            setInterval(function () {
+                hours = parseInt(timer / 3600, 10);
+                minutes = parseInt((timer % 3600) / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+
+                hours = hours < 10 ? "0" + hours : hours;
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                display.textContent = `${hours}:${minutes}:${seconds}`;
+
+                if (--timer < 0) {
+                    timer = duration;
+                }
+            }, 1000);
+        }
+
+        window.onload = function () {
+            let oneDay = 24 * 60 * 60; // 24 horas em segundos
+            let display = document.querySelector('#timer');
+            startTimer(oneDay, display);
+        };
+    </script>
 
 </body>
 </html>
